@@ -29,7 +29,7 @@
         <pose>0 0 0.047800 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/yang/code/catkin_workspace/src/create/meshes/create_body.dae</uri>
+            <uri>/home/yang/code/catkin_workspace/src/gazebo_simple/model/meshes/create_body.dae</uri>
           </mesh>
         </geometry>
       </visual>
