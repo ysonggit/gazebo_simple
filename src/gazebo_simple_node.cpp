@@ -14,8 +14,10 @@ int main(int argc, char **argv)
 
   ros::NodeHandle n;
 
-  ros::Publisher vel_pub = n.advertise<geometry_msgs::Twist>("/cmd_vel", 1);
-
+  ros::Publisher vel_pub_0 = n.advertise<geometry_msgs::Twist>("/robot0/cmd_vel", 1);
+  ros::Publisher vel_pub_1 = n.advertise<geometry_msgs::Twist>("/robot1/cmd_vel", 1);
+  ros::Publisher vel_pub_2 = n.advertise<geometry_msgs::Twist>("/robot2/cmd_vel", 1);
+  ros::Publisher vel_pub_3 = n.advertise<geometry_msgs::Twist>("/robot3/cmd_vel", 1);
   ros::Rate loop_rate(5);
 
   int count = 0;
@@ -32,8 +34,10 @@ int main(int argc, char **argv)
     cmd_vel.angular.z = 0.4*sin(count);
 
 
-    vel_pub.publish(cmd_vel);
-
+    vel_pub_0.publish(cmd_vel);
+    vel_pub_1.publish(cmd_vel);
+    vel_pub_2.publish(cmd_vel);
+    vel_pub_3.publish(cmd_vel);
     ros::spinOnce();
 
     loop_rate.sleep();
